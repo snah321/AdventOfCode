@@ -14,3 +14,5 @@ def solver(list1, n):
             return (math.prod(c))
 
 print(solver(x,2))
+
+print(solver(x,3))
