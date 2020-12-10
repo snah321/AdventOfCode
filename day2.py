@@ -1,4 +1,4 @@
-f = open("E:\\Downloads\\aoc\\day2_input.txt")
+f = open("aoc\\day2_input.txt")
 x = f.read().splitlines()
 
 

@@ -4,7 +4,7 @@ import math
 
 
 
-f = open("E:\\Downloads\\aoc\\day1_input.txt")
+f = open("aoc\\day1_input.txt")
 
 x = map(int,f.read().split())
 
