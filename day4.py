@@ -4,10 +4,6 @@ f = open("aoc\\day4_input.txt")
 txt = f.read().split("\n\n")
 
 
-temp = txt[1].replace("\n", " ").split()
-ans = dict(t.split(":") for t in temp)
-print(ans['hgt'][:-2])
-
 
 req = {
     "byr": lambda x: 1920 <= int(x) <= 2002,
@@ -19,13 +15,6 @@ req = {
     "ecl": lambda x: x in ("amb", "blu", "brn", "gry", "grn", "hzl", "oth"),
     "pid": lambda x: re.fullmatch(r"\d{9}", x),
 }
-
-temp2 = dict(item.split(":") for item in txt[0].replace("\n", " ").split())
-print(temp2)
-print(all(t in temp2.keys() for t in req))
-
-
-
 
 def valid_pass(txt, req):
 

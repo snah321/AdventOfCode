@@ -20,13 +20,6 @@ def pass_checker(lst):
         return False
 
 
-    
-
-
-
-#print( list( map(int,temp[0][0].split()[0].split("-"))))
-#print(pass_checker(temp[0]))
-
 count = 0
 for t in temp:
     if(pass_checker(t)):
