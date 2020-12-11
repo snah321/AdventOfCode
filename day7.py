@@ -40,5 +40,32 @@ def count_targetbag(bag_rules, target_bag):
 
 print(count_targetbag(bag_rules, "shiny gold"))
 
-def count_sumbags()
+
+test_d = {
+    "shiny gold": [('2', "dark red")],
+    "dark red": [('2', "dark orange")],
+    "dark orange": [('2', "dark yellow")],
+    "dark yellow": [('2', "dark green")],
+    "dark green" : [('2' , "dark blue")],
+    "dark blue" : [('2', "dark violet")],
+    "dark violet":[]
+}
+
+def sum_targetbag(bag_rule, target_bag):
+
+    def helper_sum(t_bags):
+        return sum(int(num) + int(num) * helper_sum(bag) for num,bag in bag_rule[t_bags])
+    
+    return helper_sum(target_bag)
+
+print(sum_targetbag(test_d, "shiny gold"))
+
+print(sum_targetbag(bag_rules, "shiny gold"))        
+
+
+    
+
+        
+
+
 
