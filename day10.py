@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 f = open("aoc\\day10_input.txt")
 
 example = [
@@ -56,6 +58,33 @@ def diff_multi(ada):
 
 print(diff_multi(ada) )
 
+sort_seq = sorted(ada)
+max_ada = max(sort_seq) + 3
+sort_seq.insert(0, 0)
 
-def num_comb(ada):
-    count = 0 
+print(sort_seq)
+
+paths = defaultdict(int )
+paths[0] = 1
+
+# for adapter in sort_seq:
+#     for diff in range(1, 4):
+#         next_adapter = adapter + diff
+#         if next_adapter in sort_seq:
+#             paths[next_adapter] += paths[adapter]
+
+
+def num_path(seq):
+
+    for prev_adapter in seq:
+
+        for d in range(1,4):
+            next1 = prev_adapter + d
+            if next1 in seq:
+                paths[next1] += paths[prev_adapter]
+
+    return paths[max(seq)]
+
+print(num_path(sort_seq))
+
+    
